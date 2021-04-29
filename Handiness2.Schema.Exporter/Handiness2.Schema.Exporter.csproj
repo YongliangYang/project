@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net40;netcoreapp2.0</TargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;1705;</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.0' ">
+    <PackageReference Include="DotNetCore.NPOI" Version="1.0.2" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net40' ">
+
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+    <PackageReference Include="System.ValueTuple" Version="4.4.0" />
+    
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework)' == 'net40' ">
+
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+    <PackageReference Include="System.ValueTuple" Version="4.4.0" />
+    <PackageReference Include="NPOI" Version="2.3.0" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Compile Remove="Exception\**" />
+    <EmbeddedResource Remove="Exception\**" />
+    <None Remove="Exception\**" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\Handiness2.Schema.SQLServer\Handiness2.Schema.SQLServer.csproj" />
+    <ProjectReference Include="..\Handiness2.Schema\Handiness2.Schema.csproj" />
+    <ProjectReference Include="..\Handiness2\Handiness2.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="template.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

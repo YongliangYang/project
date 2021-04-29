@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net40;netcoreapp2.0</TargetFrameworks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Handiness2.Schema.SQLServer\Handiness2.Schema.SQLServer.csproj" />
+    <ProjectReference Include="..\Handiness2.Schema\Handiness2.Schema.csproj" />
+    <ProjectReference Include="..\Handiness2\Handiness2.csproj" />
+  </ItemGroup>
+
+</Project>
